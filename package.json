@@ -1,0 +1,8 @@
+{
+  "name": "jornada-do-autoamor",
+  "private": true,
+  "description": "Landing page da Jornada do AutoAmor Online — HTML/CSS/JS estático, sem build step.",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

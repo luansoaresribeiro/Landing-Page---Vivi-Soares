@@ -1,0 +1,7 @@
+# Local agent/design skill installations (tooling, not site content)
+.agents/
+.claude/
+skills-lock.json
+
+# Dependencies (none currently, but standard practice)
+node_modules/
