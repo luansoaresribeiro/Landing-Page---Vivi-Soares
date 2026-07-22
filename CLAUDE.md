@@ -232,9 +232,18 @@ can become a real page.
 
 ## Testimonials
 
-- **The one real, sourced quote:** "A Vivi Soares mudou a minha vida porque me
-  ensinou a seguir a voz do meu coração e a ser eu mesma." (attributed generically
-  as "Aluna da Jornada do AutoAmor" — no full name/photo was in the source doc.)
+- **The one real, sourced written quote:** "A Vivi Soares mudou a minha vida
+  porque me ensinou a seguir a voz do meu coração e a ser eu mesma." (attributed
+  generically as "Aluna da Jornada do AutoAmor" — no full name/photo was in the
+  source doc.)
+- **8 real testimonial screenshots** (Instagram comments + WhatsApp DMs from real
+  students, several already saved by Vivi herself as "Depoimento" on her own
+  Instagram) are live on the site as `assets/images/depoimento-1.jpg` through
+  `depoimento-8.jpg`, shown as an image gallery in the Depoimentos section.
+  Authors visible in the screenshots: Leila Iara Dias, Bia Siqueira, Vini Reis,
+  Ana Olívia, Laura Karol, Valéria Chalita, Paulinha Goldenberg, and a comment
+  from Dra. Fabricia Meneghini. These were uploaded by the user directly via the
+  GitHub web UI and pulled in with `git pull`, not sourced from Drive.
 - **5 video testimonials exist as YouTube links** but are **not transcribed or
   curated yet**:
   - https://youtu.be/Ngqf9XwyhCo

@@ -25,13 +25,22 @@
 
 <main id="conteudo">
 
+  <!-- HERO REAL: the finished brand graphic (photo + lockup already composited), shown as-is -->
+  <section class="hero-real" id="topo">
+    <div class="hero-real-media">
+      <img src="assets/images/hero-real.jpg" alt="Jornada do AutoAmor: o caminho de volta para si. Vivi Soares em um momento de presença." loading="eager">
+    </div>
+    <a class="btn btn-primary btn-lg hero-real-cta" href="https://link.infinitepay.io/vivisoaress/VC1D-C0na2uElDt-333,00">Quero começar</a>
+    <svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,80 L0,80 Z" fill="var(--cream)"/></svg>
+  </section>
+
   <!-- HERO: editorial manifesto, no image, message is the design -->
-  <section class="hero" id="topo">
+  <section class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <svg class="botanical botanical-tl" viewBox="0 0 120 120" aria-hidden="true"><path d="M10 110C10 70 40 40 90 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 70c8-4 14-2 18 6M45 50c8-2 14 2 16 10M62 32c8-1 13 4 14 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     <div class="hero-content">
       <span class="eyebrow-mark" aria-hidden="true">✦</span>
-      <h1 class="display-huge">Escute a voz<br>do seu coração.</h1>
+      <h2 class="display-huge">Escute a voz<br>do seu coração.</h2>
       <p class="hero-sub">Um convite para silenciar o barulho de fora e voltar a viver a partir de quem você realmente é.</p>
       <a class="btn btn-primary btn-lg" href="https://link.infinitepay.io/vivisoaress/VC1D-C0na2uElDt-333,00">Quero começar</a>
     </div>
@@ -70,6 +79,9 @@
   <section class="section-quote reveal">
     <p class="quote-huge">Tudo o que você procura fora começa a despertar quando se reencontra consigo.</p>
   </section>
+
+  <!-- BROWN BAND: intro through the method pull-quote -->
+  <div class="brown-band">
 
   <!-- WHAT IS THE JOURNEY -->
   <section class="section section-intro">
@@ -123,6 +135,9 @@
     <p class="quote-huge">Quando mente, coração e alma caminham na mesma direção, a vida passa a fazer mais sentido.</p>
   </section>
 
+  </div>
+  <!-- END BROWN BAND -->
+
   <!-- 11 PORTALS: grid, not a bordered list -->
   <section class="section section-portals" id="portais">
     <h2 class="display-mid reveal">Onze portais de autoencontro.</h2>
@@ -138,7 +153,10 @@
       <div class="portal"><span class="portal-num">08</span><h3>Cura nos Relacionamentos</h3><p>Fortalecendo acolhimento, pertencimento e confiança.</p></div>
       <div class="portal"><span class="portal-num">09</span><h3>Conexão com o AutoAmor</h3><p>Um profundo encontro consigo mesma.</p></div>
       <div class="portal"><span class="portal-num">10</span><h3>Manifestação da Abundância</h3><p>Receber aquilo que está alinhado ao propósito da sua alma.</p></div>
-      <div class="portal"><span class="portal-num">11</span><h3>Meditação do Arco-Íris</h3><p>Integração e celebração da sua jornada.</p></div>
+      <div class="portal portal-rainbow">
+        <span class="rainbow-dots" aria-hidden="true"><span style="background:#D91C5C"></span><span style="background:#F0932B"></span><span style="background:#F5C842"></span><span style="background:#4CAF50"></span><span style="background:#4A90D9"></span><span style="background:#B98FD6"></span></span>
+        <span class="portal-num">11</span><h3>Meditação do Arco-Íris</h3><p>Integração e celebração da sua jornada.</p>
+      </div>
     </div>
   </section>
 
@@ -170,13 +188,20 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
+  <!-- TESTIMONIAL: floating interactive field -->
   <section class="section section-testimonial" id="depoimentos">
     <h2 class="display-mid reveal">Corações que já viveram essa experiência.</h2>
-    <blockquote class="testimonial reveal">
-      <p>"A Vivi Soares mudou a minha vida porque me ensinou a seguir a voz do meu coração e a ser eu mesma."</p>
-      <cite>Aluna da Jornada do AutoAmor</cite>
-    </blockquote>
+    <p class="measure reveal">Passe o mouse ou toque em um depoimento para explorar. Pode arrastar.</p>
+    <div class="depoimento-float-field" id="depoimentoField">
+      <figure class="float-card"><img src="assets/images/depoimento-1.jpg" alt="Depoimento de aluna: mensagem de gratidão para Vivi Soares" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-2.jpg" alt="Depoimento de aluna sobre a vivência do Autoencontro" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-3.jpg" alt="Depoimento de aluno sobre o trabalho com Vivi Soares" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-4.jpg" alt="Depoimento de aluna sobre a Jornada do AutoAmor" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-5.jpg" alt="Depoimento de aluna sobre a vivência do Autoencontro" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-6.jpg" alt="Depoimento de aluna sobre a vivência do Autoencontro" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-7.jpg" alt="Comentário de gratidão para Vivi Soares" loading="lazy" draggable="false"></figure>
+      <figure class="float-card"><img src="assets/images/depoimento-8.jpg" alt="Depoimento de aluna sobre o Autoencontro" loading="lazy" draggable="false"></figure>
+    </div>
   </section>
 
   <!-- INCLUDED -->
@@ -238,6 +263,7 @@
   <!-- FINAL: manifesto bookend -->
   <section class="hero hero-final">
     <div class="hero-glow" aria-hidden="true"></div>
+    <div class="rainbow-corner" aria-hidden="true"></div>
     <svg class="botanical botanical-br" viewBox="0 0 120 120" aria-hidden="true"><path d="M110 10C110 50 80 80 30 100" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M90 50c-8 4-14 2-18-6M75 70c-8 2-14-2-16-10M58 88c-8 1-13-4-14-11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     <div class="hero-content reveal">
       <span class="eyebrow-mark" aria-hidden="true">✦</span>
@@ -264,5 +290,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/depoimentos-float.js"></script>
 </body>
 </html>
