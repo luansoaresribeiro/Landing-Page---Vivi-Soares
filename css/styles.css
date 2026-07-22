@@ -278,8 +278,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 /* ===================================================================
    Portals grid
 =================================================================== */
-.portal-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.75rem 2.25rem; margin-top:2.5rem; }
+.portal-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2.5rem 2.25rem; margin-top:2.5rem; }
 .portal{ padding-top:1.35rem; border-top:1px solid var(--warm-sand); }
+.portal-media{
+  width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:16px;
+  margin-bottom:1.1rem; box-shadow:var(--shadow-soft);
+}
 .portal-num{ font-family:var(--font-display); font-weight:600; font-size:1.4rem; color:var(--terracotta); display:block; margin-bottom:.5rem; }
 .portal h3{ font-family:var(--font-display); font-weight:600; font-size:1.05rem; margin:0 0 .4rem; color:var(--text-dark); }
 .portal p{ margin:0; font-size:.9rem; color:var(--text-warm-gray); }

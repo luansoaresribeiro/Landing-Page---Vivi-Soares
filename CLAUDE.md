@@ -16,6 +16,19 @@ that reset so nothing has to be re-researched from Google Drive again.
   light flare portrait — confirmed correct) and `assets/images/metodo-caminho-da-alma.png`
   (the official 6-pillar method diagram — confirmed correct). Both pulled from
   Vivi's Google Drive and visually verified.
+- **`assets/images/hero-real.jpg`** — the actual finished hero graphic (photo +
+  title/tagline/marks already composited into the image itself by Vivi's
+  designer). Displayed as-is at its native aspect ratio; do not overlay
+  duplicate HTML text on top of it.
+- **`assets/images/depoimento-1.jpg` through `depoimento-8.jpg`** — real
+  testimonial screenshots (see Testimonials section below).
+- **`assets/images/portal-1.jpg` through `portal-11.jpg`** — one real photo of
+  Vivi per portal in the "Onze Portais de AutoEncontro" section, uploaded by
+  Vivi via the GitHub web UI on 2026-07-22 and matched in chronological upload
+  order to portals 1–11. A 12th uploaded file was an exact duplicate of
+  `vivi-arco-iris.jpg` and was discarded, not used as a portal image.
+- **`assets/images/rainbow-waves.png`** — decorative rainbow-stripe graphic,
+  used sparingly (portal 11 accent, final-section corner peek at low opacity).
 - **Do not pull more photos from Drive by filename search.** A prior broad search
   returned two files titled "Foto de Vivi" that were actually unrelated photos of
   children playing soccer — Drive filenames/metadata in this account are not
@@ -178,7 +191,7 @@ anos de mergulho em autoconhecimento; +1.000 vidas impactadas.
 
 **The 11 Portais de AutoEncontro** (each = one guided meditation):
 
-1. **Alinhamento Energético** — Reconexão com sua energia vital e centramento.
+1. **Alinhamento Energético do Fogo Sagrado** — Reconexão com sua energia vital e centramento. (Title updated per Vivi's explicit instruction to add "do Fogo Sagrado".)
 2. **Resgate de Alma** — Reconhecendo e acolhendo partes suas que ficaram marcadas por experiências difíceis da vida.
 3. **Reequilibrando os Chakras** — Uma experiência para favorecer harmonização energética, presença e relaxamento.
 4. **Reconexão e Cura da Criança Interior** — Um encontro amoroso com sua história para acolher emoções e resgatar alegria, espontaneidade e leveza.
