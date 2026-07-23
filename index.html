@@ -15,6 +15,7 @@
   <div class="header-inner">
     <a class="logo" href="#topo">Vivi Soares</a>
     <nav class="header-nav" aria-label="Navegação da página">
+      <a href="sobre.html">Sobre</a>
       <a href="#metodo">Método</a>
       <a href="#portais">Portais</a>
       <a href="#depoimentos">Depoimentos</a>
@@ -35,16 +36,19 @@
   </section>
 
   <!-- HERO: editorial manifesto, no image, message is the design -->
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <svg class="botanical botanical-tl" viewBox="0 0 120 120" aria-hidden="true"><path d="M10 110C10 70 40 40 90 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 70c8-4 14-2 18 6M45 50c8-2 14 2 16 10M62 32c8-1 13 4 14 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    <div class="hero-content">
-      <span class="eyebrow-mark" aria-hidden="true">✦</span>
-      <h2 class="display-huge">Escute a voz<br>do seu coração.</h2>
-      <p class="hero-sub">Um convite para silenciar o barulho de fora e voltar a viver a partir de quem você realmente é.</p>
-      <a class="btn btn-primary btn-lg" href="https://link.infinitepay.io/vivisoaress/VC1D-C0na2uElDt-333,00">Quero começar</a>
+  <section class="voice-stage" id="voice-cinematic">
+    <div class="voice-sticky">
+      <canvas id="dotted-surface-canvas" class="dotted-canvas" aria-hidden="true"></canvas>
+      <div class="voice-glass" aria-hidden="true"></div>
+      <svg class="botanical botanical-tl" viewBox="0 0 120 120" aria-hidden="true"><path d="M10 110C10 70 40 40 90 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M30 70c8-4 14-2 18 6M45 50c8-2 14 2 16 10M62 32c8-1 13 4 14 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="hero-content voice-content">
+        <span class="eyebrow-mark" aria-hidden="true">✦</span>
+        <h2 class="display-huge">Escute a voz<br>do seu coração.</h2>
+        <p class="hero-sub">Um convite para silenciar o barulho de fora e voltar a viver a partir de quem você realmente é.</p>
+        <a class="btn btn-primary btn-lg" href="https://link.infinitepay.io/vivisoaress/VC1D-C0na2uElDt-333,00">Quero começar</a>
+      </div>
+      <svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,80 L0,80 Z" fill="var(--cream)"/></svg>
     </div>
-    <svg class="wave-divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,20 C960,40 1200,90 1440,40 L1440,80 L0,80 Z" fill="var(--cream)"/></svg>
   </section>
 
   <!-- FACTS BAR: utility strip, directly under hero, not inside it -->
@@ -92,9 +96,14 @@
 
   <!-- METHOD: bento-style asymmetric grid, no image -->
   <section class="section section-method" id="metodo">
-    <p class="eyebrow reveal">A metodologia por trás da jornada</p>
-    <h2 class="display-mid reveal">O Método Caminho da Alma</h2>
-    <p class="measure reveal">Uma metodologia autoral que integra seis pilares, porque uma transformação profunda acontece quando cuidamos de todas as dimensões que compõem a nossa existência.</p>
+    <div class="method-top">
+      <div class="method-top-text reveal">
+        <p class="eyebrow">A metodologia por trás da jornada</p>
+        <h2 class="display-mid">O Método Caminho da Alma</h2>
+        <p class="measure">Uma metodologia autoral que integra seis pilares, porque uma transformação profunda acontece quando cuidamos de todas as dimensões que compõem a nossa existência.</p>
+      </div>
+      <img class="method-diagram reveal" src="assets/images/metodo-caminho-da-alma.png" alt="Diagrama do Método Caminho da Alma com os seis pilares: Reconexão Espiritual, Cura Emocional, Libertação Ancestral, Equilíbrio Energético, Clareza Mental e Enraizamento Físico" loading="lazy">
+    </div>
     <div class="pillar-bento reveal">
       <div class="pillar-tile pillar-tile-lg" style="--dot:#A55A36">
         <span class="pillar-dot"></span>
@@ -211,6 +220,7 @@
       <h2 class="display-mid">Vivi Soares</h2>
       <p>Criadora do Método Caminho da Alma, terapeuta integrativa e facilitadora de transformação. Economista com MBA em Management e Marketing pela FGV, construiu quase 30 anos de trajetória corporativa antes de iniciar, após se tornar mãe, uma jornada profunda de autoconhecimento.</p>
       <p class="script-line">tudo o que compartilho foi, antes, vivido por mim</p>
+      <a class="btn btn-outline" href="sobre.html">Conhecer a história completa</a>
     </div>
     <div class="split-stats reveal">
       <div class="stat"><span class="stat-v">30</span><span class="stat-k">Anos de trajetória corporativa</span></div>
@@ -322,5 +332,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/depoimentos-float.js"></script>
+<script type="module" src="js/dotted-surface.js"></script>
 </body>
 </html>

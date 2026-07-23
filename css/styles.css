@@ -186,6 +186,60 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .wave-divider{ position:absolute; left:0; right:0; bottom:-1px; width:100%; height:60px; z-index:1; }
 
 /* ===================================================================
+   Voice stage: cinematic scroll-through moment for "Escute a voz do
+   coração". Extra scroll room (200vh) lets the sticky content hold on
+   screen while the dotted surface, glass, and title respond to how far
+   the visitor has scrolled through the section, using the same native
+   scroll-driven animation approach as .reveal elsewhere on the site.
+=================================================================== */
+.voice-stage{
+  position:relative; height:200vh;
+}
+@supports (animation-timeline: view()){
+  .voice-stage{ view-timeline-name: --voice-progress; view-timeline-axis: block; }
+}
+.voice-sticky{
+  position:sticky; top:0; height:100dvh; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--text-dark);
+}
+.dotted-canvas{
+  position:absolute; inset:0; width:100%; height:100%; z-index:0;
+  display:block;
+}
+.voice-glass{
+  position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--text-dark) 55%, transparent) 0%, color-mix(in srgb, var(--text-dark) 20%, transparent) 45%, color-mix(in srgb, var(--text-dark) 65%, transparent) 100%);
+  backdrop-filter: blur(2px) saturate(115%);
+  -webkit-backdrop-filter: blur(2px) saturate(115%);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--cream) 8%, transparent);
+}
+.voice-content{ position:relative; z-index:2; color:var(--cream); text-align:center; }
+.voice-content .eyebrow-mark{ margin-left:auto; margin-right:auto; color:var(--gold); }
+.voice-content .display-huge{ color:var(--cream); }
+.voice-content .hero-sub{ color:color-mix(in srgb, var(--cream) 82%, transparent); margin-left:auto; margin-right:auto; }
+.voice-stage .botanical{ color:var(--gold); opacity:.35; z-index:1; }
+
+@supports (animation-timeline: view()){
+  .voice-content, .dotted-canvas, .voice-glass{
+    animation-timeline: --voice-progress;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+  }
+  .voice-content{ animation-name: voice-scale-in; animation-range: entry 0% cover 70%; }
+  .dotted-canvas{ animation-name: voice-fade-in; animation-range: entry 0% cover 45%; }
+  .voice-glass{ animation-name: voice-glass-in; animation-range: entry 5% cover 55%; }
+}
+@keyframes voice-scale-in{ from{ transform:scale(.88); } to{ transform:scale(1.12); } }
+@keyframes voice-fade-in{ from{ opacity:0; } to{ opacity:1; } }
+@keyframes voice-glass-in{ from{ opacity:0; } to{ opacity:1; } }
+
+@media (prefers-reduced-motion: reduce){
+  .voice-content, .dotted-canvas, .voice-glass{ animation:none !important; opacity:1; transform:none; }
+}
+
+/* ===================================================================
    Facts bar
 =================================================================== */
 .facts-wrap{ padding:0 1.75rem; position:relative; z-index:2; }
@@ -258,8 +312,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .section-intro{ max-width:44rem; }
 
 /* ===================================================================
-   Method: soft bento grid
+   Method: intro split + soft bento grid
 =================================================================== */
+.method-top{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:center;
+  margin-bottom:1rem;
+}
+.method-diagram{
+  width:100%; border-radius:20px; box-shadow:var(--shadow-soft); border:1px solid var(--warm-sand);
+}
+@media (max-width:860px){
+  .method-top{ grid-template-columns:1fr; gap:2rem; }
+}
 .pillar-bento{
   display:grid; gap:1.5rem; margin-top:2.5rem;
   grid-template-columns:repeat(4,1fr); grid-auto-rows:1fr;
@@ -314,6 +378,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid 
 .stat{ background:var(--warm-sand); border-radius:var(--radius-card); padding:1.5rem 1.75rem; }
 .stat-v{ font-family:var(--font-display); font-weight:600; font-size:2.5rem; color:var(--terracotta); display:block; line-height:1; margin-bottom:.4rem; }
 .stat-k{ font-size:.85rem; color:var(--text-warm-gray); }
+
+/* ===================================================================
+   About page (sobre.html)
+=================================================================== */
+.about-intro{ padding-top:8rem; }
+.about-title{ font-size:clamp(2.6rem,6vw,4.6rem); }
+.about-photo{
+  width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:24px;
+  box-shadow:var(--shadow-lift); border:1px solid var(--warm-sand);
+}
+.about-bio{ display:grid; grid-template-columns:1.4fr 1fr; gap:3.5rem; align-items:start; }
+.about-bio-text p{ margin:0 0 1.25rem; color:var(--text-warm-gray); }
+.about-stats{ position:sticky; top:6rem; }
+@media (max-width:860px){
+  .about-bio{ grid-template-columns:1fr; }
+  .about-stats{ position:static; flex-direction:row; flex-wrap:wrap; }
+  .about-stats .stat{ flex:1 1 200px; }
+}
 
 /* ===================================================================
    Testimonial: floating interactive field

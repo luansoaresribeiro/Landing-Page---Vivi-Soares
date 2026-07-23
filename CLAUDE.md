@@ -302,9 +302,52 @@ can become a real page.
   it's a physical-retreat business, so location/booking-specific elements don't
   transfer directly.
 
+## Multi-page structure (added 2026-07-23)
+
+The site is no longer single-page. Current pages:
+- **`index.html`** — the main landing page (hero-real, second "voice" hero,
+  facts bar, trust row, identification, method, portals, testimonials, pricing,
+  FAQ, final CTA).
+- **`sobre.html`** — dedicated "Sobre Vivi" page with the full long-form bio
+  (from the bio section above), the `sobre-vivi.jpg` photo, credibility stats,
+  a manifesto quote, and a CTA back to the main offer. Linked from the header
+  nav ("Sobre") on both pages and from a "Conhecer a história completa" button
+  in the index.html "Meet Vivi" split section.
+- Header nav on `index.html` now reads: Sobre, Método, Portais, Depoimentos.
+  On `sobre.html`, the same nav items point back to `index.html#anchor`.
+
+## Cinematic "Escute a voz do coração" section (added 2026-07-23)
+
+The second hero ("Escute a voz do seu coração") on `index.html` is now a
+scroll-driven cinematic moment, not a static section:
+- **Three.js dotted surface**: a calm, undulating grid of gold-toned points,
+  self-hosted at `js/vendor/three.module.js` (ES module, no bundler, no React
+  — the user explicitly asked to preserve the vanilla HTML/CSS/JS architecture
+  rather than adopt React/TypeScript/Tailwind/shadcn for this one effect).
+  Implementation: `js/dotted-surface.js`. Only renders while the section is
+  actually in view (IntersectionObserver gates the render loop), and is
+  skipped entirely under `prefers-reduced-motion: reduce` or if WebGL is
+  unavailable — the section stays fully readable either way.
+- **Scroll-driven scale/fade**: implemented with native CSS scroll-driven
+  animations (named `view-timeline`), the same technique already used for
+  `.reveal` elsewhere on the site — no scroll event listeners. The outer
+  `.voice-stage` (200vh) declares `view-timeline-name`; the pinned
+  `.voice-sticky` content (title, canvas, glass layer) consumes it via
+  `animation-timeline`. Gated behind `@supports (animation-timeline: view())`
+  and disabled under reduced motion, both with a fully static, readable
+  fallback.
+- **Known test gotcha**: headless Chrome in this dev environment defaults to
+  `prefers-reduced-motion: reduce`, which makes the animation invisible when
+  testing normally. Verifying it requires overriding that via
+  `Emulation.setEmulatedMedia` (CDP) — don't mistake the reduced-motion
+  fallback for a broken animation again.
+
 ## What's next
 
-The user did not like the v1 design/layout (HTML structure above was deleted).
-Before rebuilding, get explicit direction on: visual style references, palette,
-typography, and what specifically felt wrong about v1 — don't assume it was the
-content order, since the content itself hasn't been challenged.
+Open items, not yet done:
+- Canal do Autoencontro still has no copy or price (see gap noted above).
+- FAQ, Privacy Policy, Terms still need real content beyond what's on
+  `index.html` today.
+- The "Sobre Vivi" page currently reuses `.section-split`/`.stat` styling
+  patterns from `index.html`; if the bio page grows, it may deserve its own
+  more editorial layout rather than borrowing product-page components.
