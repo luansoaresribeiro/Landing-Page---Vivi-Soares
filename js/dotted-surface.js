@@ -11,11 +11,8 @@ import * as THREE from "./vendor/three.module.js";
   var stage = document.getElementById("voice-cinematic");
   var sticky = stage ? stage.querySelector(".voice-sticky") : null;
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (reduceMotion || typeof THREE === "undefined") {
-    // Static, calm fallback: no WebGL, no motion, section stays fully readable.
-    return;
-  }
+  // Reduced motion turns off the continuous wave, not the dots themselves:
+  // the surface still renders, just as a still frame instead of an animation.
 
   var renderer;
   try {
@@ -78,7 +75,10 @@ import * as THREE from "./vendor/three.module.js";
     camera.updateProjectionMatrix();
   }
   resize();
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", function () {
+    resize();
+    if (reduceMotion) renderer.render(scene, camera); // no rAF loop to pick this up otherwise
+  });
 
   var running = false;
   var rafId = null;
@@ -105,10 +105,14 @@ import * as THREE from "./vendor/three.module.js";
   }
 
   function start() {
+    resize(); // layout is guaranteed settled by the time this section is actually visible
+    if (reduceMotion) {
+      renderer.render(scene, camera); // dots are still shown, just not animated
+      return;
+    }
     if (running) return;
     running = true;
     resumeTime = performance.now();
-    resize(); // layout is guaranteed settled by the time this section is actually visible
     rafId = requestAnimationFrame(animate);
   }
   function stop() {
